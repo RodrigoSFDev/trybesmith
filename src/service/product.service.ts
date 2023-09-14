@@ -1,5 +1,6 @@
 import ProductModel, { ProductInputtableTypes } from '../database/models/product.model';
 import { ServiceRresponse } from '../types/ServiceRes';
+import { Product } from '../types/Product';
 
 type FilterProduct = {
   id: number;
@@ -18,6 +19,12 @@ async function create(product: ProductInputtableTypes): Promise<ServiceRresponse
   return { status: 'SUCCESSFUL', data: filteredProduct.dataValues };
 }
 
+async function findAll(): Promise<Product[]> {
+  const products = await ProductModel.findAll();
+  return products.map((product) => product.toJSON()); 
+}
+
 export default {
   create,
+  findAll,
 };
