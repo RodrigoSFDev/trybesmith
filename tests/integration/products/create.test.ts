@@ -53,4 +53,33 @@ describe('POST /products', function () {
     expect(response.body).to.deep.equal(productsMock);
   });
  */
+/*   it('should create a new product', async function() {
+    const validProductBodyFromDB = { name: 'Cajado de Merlin', price: '50 peças de ouro', orderId: 4, id: 1 };
+    const validProductBody = { name: 'Cajado de Merlin', price: '50 peças de ouro', orderId: 4 };
+    const returnCreatedProduct = { name: 'Cajado de Merlin', price: '50 peças de ouro', orderId: 4, id: 1  };
+    //Arrange
+    const mockCreateReturn = ProductModel.build(validProductBodyFromDB);
+    sinon.stub(ProductModel, 'create').resolves(mockCreateReturn);
+    //Act
+    const httpResponse = await chai
+        .request(app)
+        .post('/products')
+        .send(validProductBody);
+    //Assert
+    expect(httpResponse.status).to.equal(201);
+    expect(httpResponse.body).to.be.deep.equal(returnCreatedProduct)
+  })
+  it('recupera com sucesso todos os produtos', async function() {
+    const validProductBodyFromDB = { name: 'Cajado de Merlin', price: '50 peças de ouro', orderId: 4, id: 1 };
+    //Arrange
+    const mockCreateReturn = ProductModel.build(validProductBodyFromDB);
+    sinon.stub(ProductModel, 'findAll').resolves([mockCreateReturn]);
+    //Act
+    const httpResponse = await chai
+        .request(app)
+        .get('/products');
+    //Assert
+    expect(httpResponse.status).to.equal(200);
+    expect(httpResponse.body).to.be.deep.equal(productsMock.returnGetAllProduct)
+  }) */
 });
