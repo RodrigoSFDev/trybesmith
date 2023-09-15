@@ -9,7 +9,7 @@ export const unauthorizedResponse: LoginResponse = {
   data: { message: 'Username or password invalid' },
 };
 
-const JWT_SECRET = 'your-secret-key'; // Substitua pelo seu segredo JWT
+const JWT_SECRET = 'your-secret-key'; 
 
 async function login(username: string, password: string): Promise<LoginResponse> {
   // Procure um usuário com o nome de usuário fornecido
